@@ -1,9 +1,13 @@
 from flask import Flask,redirect,url_for,render_template
 app=Flask(__name__)
 
-@app.route('/')
+@app.route('/home')
 def home():
-    return "hello world"
+    return render_template('layout.html',title="home")
+@app.route('/about')
+def about():
+    return render_template('layout.html',title="about")
+
 
 @app.route('/pass/<sname>/<int:num>')
 def passed(sname,num):
